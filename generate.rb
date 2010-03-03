@@ -14,8 +14,12 @@ artcls = []
 cntntfiles.each do |a|
 	f = File.open(a) { |yf| YAML::load( yf ) }
 	f['name'] = File.basename(a)[0..-6]
+	f['content'] = f['content'].split("\n")
 	artcls.push(f)
 end
+
+#order the articles
+
 
 c = nil
 artcls.each do |a|

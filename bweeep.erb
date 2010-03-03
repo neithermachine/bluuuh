@@ -17,8 +17,14 @@
 			</div>
 			<div id="riiight">
 				<h1><%= c['title'] %></h1>
-				<p id="first"></p>
-				<p></p>
+				<% first = true %>
+				<% c['content'].each do |l| 
+					if first then
+						first = false %>
+				<p id="first"><%= l %></p>
+				<% else %>
+					<p><%= l %></p>
+				<% end end %>
 			</div>
 		</div>
 	</body>
