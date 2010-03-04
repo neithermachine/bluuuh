@@ -11,7 +11,9 @@
 				<h1>Neither Machine</h1>
 				<p id="bio">Music. Codes. I'm a student, a barista, and geek. Chiptunes. Boss fights. I like my bicycle, and riding it in the sunshine. I also ride it in the rain. Cloudy days are acceptable. Bit reduction. Vocoders. Giant Communist Robot. Explosions. Mind games. Extra lives. Mosh pits. Espresso, but not the stuff from my coffee shop. Synthesizers. Kittens. Adventures. Cycling everywhere. Party to party. Code all night. Fall asleep at the keyboard. Repeat.</p>
 				<p id="links">
-					<a href="#"></a>
+				<% artcls.each do |a| %>
+					<a href="<%= "http://blog.neithermachine.com/" + a['name'] + ".html" %>"><%= a['title'] %></a>
+				<% end %>
 				</p>
 				<p id="infoz">This site was designed by me.<br />Nothing special.<br />Just Ruby generating static pages.</p>
 			</div>
@@ -24,7 +26,9 @@
 				<p id="first"><%= l %></p>
 				<% else %>
 					<p><%= l %></p>
-				<% end end %>
+				<% end %>
+				<% end %>
+				<p id="date"><%= c['date'] %></p>
 			</div>
 		</div>
 	</body>

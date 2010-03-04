@@ -15,11 +15,12 @@ cntntfiles.each do |a|
 	f = File.open(a) { |yf| YAML::load( yf ) }
 	f['name'] = File.basename(a)[0..-6]
 	f['content'] = f['content'].split("\n")
+	f['date'] = Date.parse(f['date']).strftime("%e %B %Y")
 	artcls.push(f)
 end
 
-#order the articles
-
+artcls = artcls.sort { |a,b| a['date'] <=> b['date'] }
+artcls = artcls.reverse
 
 c = nil
 artcls.each do |a|

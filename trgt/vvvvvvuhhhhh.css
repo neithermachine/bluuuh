@@ -96,6 +96,14 @@ pre {
 	font-size:12px;
 }
 
+#date {
+	font-size:14px;
+	line-height:0px;
+	text-align:right;
+	color:#bbb;
+	font-style:italic;
+}
+
 #riiight p {
 }
 
